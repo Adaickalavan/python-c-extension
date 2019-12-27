@@ -11,7 +11,6 @@ libfeature.synthesize_matrix.argtypes = [ # Argument type
     np.ctypeslib.ndpointer(dtype=np.uint8, ndim=2, flags=['C', 'A']),
     np.ctypeslib.ndpointer(dtype=np.float32, ndim=2, flags=['C', 'A', 'W'])]
 
-# @profiler.profile_line
 def synthesize_matrix(mat_in, row, col):
     """
     Generates a new synthesized matrix from the original matrix.
