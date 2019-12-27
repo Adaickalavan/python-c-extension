@@ -3,7 +3,7 @@ import os
 import ctypes
 
 feature_file = os.getenv("ROOT") + "lib/cpp/out/libfeature.so"
-libfeature = ctypes.CDLL(feature_file) 
+libfeature = ctypes.CDLL(feature_file) # Open shared library using CDLL
 libfeature.synthesize_matrix.restypes = None # Return type
 libfeature.synthesize_matrix.argtypes = [ # Argument type 
     ctypes.c_int,
