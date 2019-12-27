@@ -1,0 +1,13 @@
+version: '3'
+services:
+
+  pycextension:
+    image: pycextension
+    container_name: pycextension   
+    restart: on-failure #Ensures that intermittent failures in the Docker environment do not result in unnecessary failures of the service.
+    environment:
+      - ROOT=/src/
+      - DISPLAY=$DISPLAY
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    command: ["python", "/src/example/pycextension.py"] # Name of executable to be run
